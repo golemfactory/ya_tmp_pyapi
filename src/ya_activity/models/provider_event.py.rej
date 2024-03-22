@@ -1,7 +1,5 @@
-*** models/provider_event.py	2020-07-21 19:59:05.000000000 +0200
---- models/provider_event.py	2020-07-21 16:04:47.000000000 +0200
 ***************
-*** 31,54 ****
+*** 32,55 ****
         attribute_map (dict): The key is attribute name
                               and the value is json key in definition.
       """
@@ -26,7 +24,7 @@
           """ProviderEvent - a model defined in OpenAPI"""  # noqa: E501
           if local_vars_configuration is None:
               local_vars_configuration = Configuration()
---- 30,49 ----
+--- 31,50 ----
         attribute_map (dict): The key is attribute name
                               and the value is json key in definition.
       """
@@ -48,7 +46,7 @@
           if local_vars_configuration is None:
               local_vars_configuration = Configuration()
 ***************
-*** 56,62 ****
+*** 57,63 ****
   
           self._event_type = None
           self._activity_id = None
@@ -56,7 +54,7 @@
   
           self.event_type = event_type
           self.activity_id = activity_id
---- 51,57 ----
+--- 52,58 ----
   
           self._event_type = None
           self._activity_id = None

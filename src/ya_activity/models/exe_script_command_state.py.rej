@@ -1,7 +1,5 @@
-*** models/exe_script_command_state.py	2020-07-21 19:59:05.000000000 +0200
---- models/exe_script_command_state.py	2020-07-21 16:04:47.000000000 +0200
 ***************
-*** 31,49 ****
+*** 32,50 ****
         attribute_map (dict): The key is attribute name
                               and the value is json key in definition.
       """
@@ -21,7 +19,7 @@
           """ExeScriptCommandState - a model defined in OpenAPI"""  # noqa: E501
           if local_vars_configuration is None:
               local_vars_configuration = Configuration()
---- 30,42 ----
+--- 31,43 ----
         attribute_map (dict): The key is attribute name
                               and the value is json key in definition.
       """

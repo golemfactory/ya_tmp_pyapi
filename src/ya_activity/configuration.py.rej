@@ -1,7 +1,5 @@
-*** configuration.py	2020-07-21 19:59:05.000000000 +0200
---- configuration.py	2020-07-21 16:03:14.000000000 +0200
 ***************
-*** 295,318 ****
+*** 293,316 ****
   
           :return: The report for debugging.
           """
@@ -26,7 +24,7 @@
   
       def get_host_from_settings(self, index, variables=None):
           """Gets host URL based on the index and variables
---- 297,316 ----
+--- 295,314 ----
   
           :return: The report for debugging.
           """

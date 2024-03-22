@@ -1,7 +1,5 @@
-*** api/requestor_state_api.py	2020-07-21 19:59:05.000000000 +0200
---- api/requestor_state_api.py	2020-07-21 16:04:46.000000000 +0200
 ***************
-*** 243,269 ****
+*** 238,264 ****
   
           body_params = None
           # HTTP header `Accept`
@@ -29,7 +27,7 @@
   
       def get_running_command(self, activity_id, **kwargs):  # noqa: E501
           """Get running command for a specified Activity.  # noqa: E501
---- 248,279 ----
+--- 243,274 ----
   
           body_params = None
           # HTTP header `Accept`
@@ -63,7 +61,7 @@
       def get_running_command(self, activity_id, **kwargs):  # noqa: E501
           """Get running command for a specified Activity.  # noqa: E501
 ***************
-*** 361,384 ****
+*** 352,375 ****
   
           body_params = None
           # HTTP header `Accept`
@@ -88,7 +86,7 @@
 !             _preload_content=local_var_params.get('_preload_content', True),
 !             _request_timeout=local_var_params.get('_request_timeout'),
 !             collection_formats=collection_formats)
---- 375,403 ----
+--- 366,394 ----
   
           body_params = None
           # HTTP header `Accept`

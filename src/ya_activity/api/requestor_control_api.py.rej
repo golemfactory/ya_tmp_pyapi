@@ -1,7 +1,5 @@
-*** api/requestor_control_api.py	2020-07-21 19:59:05.000000000 +0200
---- api/requestor_control_api.py	2020-07-21 16:04:46.000000000 +0200
 ***************
-*** 222,251 ****
+*** 341,370 ****
   
           local_var_params = locals()
   
@@ -32,7 +30,7 @@
   
           collection_formats = {}
   
---- 229,260 ----
+--- 348,379 ----
   
           local_var_params = locals()
   
@@ -66,7 +64,7 @@
           collection_formats = {}
   
 ***************
-*** 259,292 ****
+*** 378,411 ****
           local_var_files = {}
   
           body_params = None
@@ -101,7 +99,7 @@
   
       def destroy_activity(self, activity_id, **kwargs):  # noqa: E501
           """Destroys given Activity.  # noqa: E501
---- 268,309 ----
+--- 387,428 ----
           local_var_files = {}
   
           body_params = None
@@ -145,7 +143,7 @@
       def destroy_activity(self, activity_id, **kwargs):  # noqa: E501
           """Destroys given Activity.  # noqa: E501
 ***************
-*** 340,375 ****
+*** 466,501 ****
   
           local_var_params = locals()
   
@@ -182,7 +180,7 @@
   
           query_params = []
   
---- 357,394 ----
+--- 483,520 ----
   
           local_var_params = locals()
   
