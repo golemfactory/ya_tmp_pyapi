@@ -1,4 +1,5 @@
 import asyncio
+import os
 
 import ya_payment
 
@@ -8,7 +9,9 @@ from ya_payment.api.requestor_api import RequestorApi
 
 
 def prepare_api():
-    app_key = '4687fae0788044b49a366c3a6f07b0ac'
+    app_key = os.getenv("YAGNA_APPKEY")
+    if app_key is None:
+        raise ValueError("YAGNA_APPKEY environment variable is not set")
 
     cfg = ya_payment.Configuration(host="http://127.0.0.1:7465/payment-api/v1")
     api_client = PaymentApiClient(
@@ -33,8 +36,11 @@ async def main():
             make_deposit=False,
             payment_platform="erc20-holesky-tglm"
         )
+        print(f"Creating allocation: {allocation}")
         allocation1 = await api.create_allocation(allocation)
         print(f"Allocation created: {allocation1}")
+
+        await asyncio.sleep(1)
 
         allocation_list = await api.get_allocations()
         for allocation in allocation_list:
@@ -42,11 +48,17 @@ async def main():
                 print(f"Found allocation match from allocation list: {allocation}")
                 break
 
+        await asyncio.sleep(1)
+
         print(f"Getting allocation: {allocation1.allocation_id}")
         allocation1 = await api.get_allocation(allocation1.allocation_id)
+        print(f"Getting allocation: {allocation1.allocation_id} done")
+
+        await asyncio.sleep(1)
 
         print(f"Releasing allocation: {allocation1.allocation_id}")
         await api.release_allocation(allocation1.allocation_id)
+        print(f"Allocation released: {allocation1.allocation_id}")
     finally:
         print("Gracefully disconnecting from the API...")
         await api.api_client.close()
