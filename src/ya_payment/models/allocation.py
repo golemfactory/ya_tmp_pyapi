@@ -41,6 +41,7 @@ class Allocation(object):
         'remaining_amount': 'str',
         'timestamp': 'datetime',
         'timeout': 'datetime',
+        'deposit': 'object',
         'make_deposit': 'bool'
     }
 
@@ -53,10 +54,11 @@ class Allocation(object):
         'remaining_amount': 'remainingAmount',
         'timestamp': 'timestamp',
         'timeout': 'timeout',
+        'deposit': 'deposit',
         'make_deposit': 'makeDeposit'
     }
 
-    def __init__(self, allocation_id=None, address=None, payment_platform=None, total_amount=None, spent_amount=None, remaining_amount=None, timestamp=None, timeout=None, make_deposit=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, allocation_id=None, address=None, payment_platform=None, total_amount=None, spent_amount=None, remaining_amount=None, timestamp=None, timeout=None, deposit=None, make_deposit=None, local_vars_configuration=None):  # noqa: E501
         """Allocation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class Allocation(object):
         self._timestamp = None
         self._timeout = None
         self._make_deposit = None
+        self._deposit = None
         self.discriminator = None
 
         self.allocation_id = allocation_id
@@ -87,6 +90,7 @@ class Allocation(object):
             self.timestamp = datetime.now(timezone.utc)
         if timeout is not None:
             self.timeout = timeout
+        self.deposit = deposit
         self.make_deposit = make_deposit
 
     @property
@@ -286,6 +290,14 @@ class Allocation(object):
         """
 
         self._timeout = timeout
+
+    @property
+    def deposit(self):
+        return self._deposit
+
+    @deposit.setter
+    def deposit(self, deposit):
+        self._deposit = deposit
 
     @property
     def make_deposit(self):

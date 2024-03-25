@@ -148,6 +148,7 @@ class Allocation(object):
     remaining_amount: str  # readonly: True
     timestamp: datetime  # readonly: True
     timeout: Optional[datetime]  # readonly: False
+    deposit: Optional[object]
     make_deposit: bool  # readonly: False
 
     def __init__(self,
@@ -156,6 +157,7 @@ class Allocation(object):
         spent_amount: str,
         remaining_amount: str,
         timestamp: datetime,
+        deposit: Optional[object],
         make_deposit: bool,
         address: Optional[str] = None,
         payment_platform: Optional[str] = None,
