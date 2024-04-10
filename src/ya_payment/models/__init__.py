@@ -17,6 +17,7 @@ from ya_payment.models.account import Account
 from ya_payment.models.activity_payment import ActivityPayment
 from ya_payment.models.agreement_payment import AgreementPayment
 from ya_payment.models.allocation import Allocation
+from ya_payment.models.deposit import Deposit
 from ya_payment.models.debit_note import DebitNote
 from ya_payment.models.debit_note_accepted_event import DebitNoteAcceptedEvent
 from ya_payment.models.debit_note_cancelled_event import DebitNoteCancelledEvent
